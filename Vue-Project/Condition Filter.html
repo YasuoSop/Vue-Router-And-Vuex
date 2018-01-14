@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" href="static/Logo.ico" />
+		<script src="static/vue-v2.5.13.js"></script>
+		<script src="static/vue-router-v3.0.1.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			label {
+				font-size: 15px;
+				color: #999;
+			}
+			
+			a {
+				text-decoration: none;
+				color: dodgerblue;
+				font-size: 14px;
+			}
+			
+			#body {
+				width: 750px;
+				height: auto;
+				margin: 5% auto;
+				border: 1px solid #D6D6D6;
+			}
+			
+			#body section>section {
+				line-height: 60px;
+				padding-left: 50px;
+				border-bottom: 1px dashed #E0E0E0;
+			}
+			
+			#body section>section:last-child {
+				border-bottom: 0;
+			}
+			
+			.had-choosed-active {
+				color: white;
+				padding: 7px 10px;
+				background: orangered;
+			}
+			
+			#body section>section a:not(:first-child) {
+				margin-left: 20px;
+			}
+			
+			#body .condition {
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="body">
+			<section class="container">
+				<section class="shang">
+					<label>上装：</label>
+					<span>
+						<a href="javascript:;" class="select-all had-choosed-active">全部</a>
+						<a href="javascript:;" v-for="s in sList">{{ s.a }}</a>
+					</span>
+				</section>
+				<section class="ku">
+					<label>裤装：</label>
+					<span>
+						<a href="javascript:;" class="select-all had-choosed-active">全部</a>
+						<a href="javascript:;" v-for="k in kList">{{ k.a }}</a>
+					</span>
+				</section>
+				<section class="qun">
+					<label>裙装：</label>
+					<span>
+						<a href="javascript:;" class="select-all had-choosed-active">全部</a>
+						<a href="javascript:;" v-for="q in qList">{{ q.a }}</a>
+					</span>
+				</section>
+			</section>
+		</div>
+		<script>
+			new Vue({
+				el: '#body',
+				data: {
+					sList: [{
+							a: '针织衫'
+						},
+						{
+							a: '毛呢外套'
+						},
+						{
+							a: 'T恤'
+						},
+						{
+							a: '羽绒服'
+						},
+						{
+							a: '棉衣'
+						},
+						{
+							a: '卫衣'
+						},
+						{
+							a: '风衣'
+						}
+					],
+					kList: [{
+							a: '牛仔裤'
+						},
+						{
+							a: '小脚/铅笔裤'
+						},
+						{
+							a: '休闲裤'
+						},
+						{
+							a: '打底裤'
+						},
+						{
+							a: '哈伦裤'
+						}
+					],
+					qList: [{
+							a: '连衣裙'
+						},
+						{
+							a: '半身裙'
+						},
+						{
+							a: '长袖连衣裙'
+						},
+						{
+							a: '中长款连衣裙'
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+
+</html>
